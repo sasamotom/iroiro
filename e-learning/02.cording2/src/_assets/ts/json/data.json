@@ -1,0 +1,128 @@
+{
+  "theme": "趣味丸出し！スーパー戦隊編（全5門）",
+  "shuffle": "true",
+  "questions": [
+    {
+      "text": "酔拳を使うのは？",
+      "hint": "「転身だぁぁぁぁぁぁ！！！！！気力だぁぁぁぁぁぁぁ！！！」から始まる主題歌の戦隊メンバーですね。",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "キリンレンジャー",
+          "correct": "true"
+        },
+        {
+          "text": "プテラレンジャー",
+          "correct": "false"
+        },
+        {
+          "text": "ブルーバスター",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "ケイン・コスギは？",
+      "hint": "忍者戦隊カクレンジャーのニンジャブラックですね。",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "サスケ",
+          "correct": "false"
+        },
+        {
+          "text": "サイゾウ",
+          "correct": "false"
+        },
+        {
+          "text": "ジライヤ",
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "text": "獣電戦隊キョウリュウジャーで存在するのは？",
+      "hint": "最終的には10人になりましたね。",
+      "type": "checkbox",
+      "choices":[
+        {
+          "text": "キョウリュウシアン",
+          "correct": "true"
+        },
+        {
+          "text": "キョウリュウマゼンタ",
+          "correct": "false"
+        },
+        {
+          "text": "キョウリュウイエロー",
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "text": "一番最初に合体ロボが登場した戦隊は？",
+      "hint": "",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "サンバルカン",
+          "correct": "true"
+        },
+        {
+          "text": "ジャッカー電撃隊",
+          "correct": "false"
+        },
+        {
+          "text": "デンジマン",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "海賊戦隊ゴーカイジャーに出てくるロボットの鳥の名前は？",
+      "hint": "",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "ナビィ",
+          "correct": "true"
+        },
+        {
+          "text": "ニック",
+          "correct": "false"
+        },
+        {
+          "text": "トリン",
+          "correct": "false"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "pointto": "100",
+      "text": "Excellent!!!!!!!!!",
+      "message": "完璧！最高！気が合いそう！！一緒に変身しよう！！！"
+    },
+    {
+      "pointto": "99",
+      "text": "おしい！！！！",
+      "message": "あとちょっと！！"
+    },
+    {
+      "pointto": "70",
+      "text": "もう少し！！",
+      "message": "好きな戦隊が被っていないとなかなか満点は難しいのかも。"
+    },
+    {
+      "pointto": "50",
+      "text": "あぁ、、、",
+      "message": "世代が違うってやつかしら・・・"
+    },
+    {
+      "pointto": "19",
+      "text": "ん？？？",
+      "message": "おっと。。。適当にやっても、確率的には１問は当たりそうですが。。。"
+    }
+  ]
+}

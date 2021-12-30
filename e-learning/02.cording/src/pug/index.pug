@@ -1,0 +1,103 @@
+extends ./_base/_layout
+
+block vars
+  include ./_base/_settings
+  - let key = "top"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  //- include ../html/_main.html
+
+  eleaning-area
+
+  //- fv-area
+  //-   .fvContainer
+  //-     p.theme ネタ発表 なんとかかんとか編
+  //-     p.message Are you ready?
+  //-     .okBtn#ok OK
+
+  //- question-area
+  //-   .questionContainer.first-q
+  //-     .container
+  //-       .question.color1.first-q
+  //-         p.qNo 01
+  //-         p.qText 正しいものはどれだ？
+  //-         ul.qList#q1
+  //-           li
+  //-             input(name="radioq1" type="radio" id="q1-1")
+  //-             label(for="q1-1") テキストテキストテキスト
+  //-           li
+  //-             input(name="radioq1" type="radio" id="q1-2")
+  //-             label(for="q1-2") テキストテキストテキスト
+  //-           li
+  //-             input(name="radioq1" type="radio" id="q1-3")
+  //-             label(for="q1-3") テキストテキストテキスト
+  //-         //- p.qHint ヒントがあればここにテキスト
+  //-         .nextBtn#next
+  //-           span GO TO THE NEXT
+  //- question-area
+  //-   .questionContainer
+  //-     .container
+  //-       .question.color2
+  //-         p.qNo 02
+  //-         p.qText 正しいものはどれだ？
+  //-         ul.qList#q2
+  //-           li
+  //-             input(name="checkq2" type="checkbox" id="q2-1")
+  //-             label(for="q2-1") テキストテキストテキスト
+  //-           li
+  //-             input(name="checkq2" type="checkbox" id="q2-2")
+  //-             label(for="q2-2") テキストテキストテキスト
+  //-           li
+  //-             input(name="checkq2" type="checkbox" id="q2-3")
+  //-             label(for="q2-3") テキストテキストテキスト
+  //-         p.qHint ヒントがあればここにテキスト。<a href="#">リンク</a>
+  //-         .nextBtn#next.finish
+  //-           span FINISH!!!!!!!!!!!
+
+  //- result-area
+  //-   .resultContainer
+  //-     .container
+  //-       .result#result
+  //-         .point
+  //-           span.total 100
+  //-           span.label 点
+  //-           span.detail / 100点
+  //-         .texts
+  //-           p.text Excellent!!!!!!!!
+  //-           p.msg 完璧！！最高！！！！！
+  //-         .answers
+  //-           p.caption 正誤
+  //-           ul.answerList
+  //-             li
+  //-               .answerNo 01
+  //-               .answerCorrect.true
+  //-             li
+  //-               .answerNo 02
+  //-               .answerCorrect.true
+  //-             li
+  //-               .answerNo 03
+  //-               .answerCorrect.true
+  //-             li
+  //-               .answerNo 04
+  //-               .answerCorrect.false
+  //-             li
+  //-               .answerNo 05
+  //-               .answerCorrect.true
+  //-             li
+  //-               .answerNo 06
+  //-               .answerCorrect.true
+  //-             li
+  //-               .answerNo 07
+  //-               .answerCorrect.true
+  //-             li
+  //-               .answerNo 08
+  //-               .answerCorrect.true
+  //-             li
+  //-               .answerNo 09
+  //-               .answerCorrect.false
+  //-             li
+  //-               .answerNo 10
+  //-               .answerCorrect.true
+  //-       .restartBtn RESTART

@@ -1,0 +1,59 @@
+
+include ../../html/_script1HeadTop.html
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width,initial-scale=1.0,shrink-to-fit=no")
+meta(name="format-detection", content="telephone=no")
+title #{page.title}
+meta(name="description", content=page.description)
+meta(name="keywords", content=page.keywords)
+
+//- meta(name="robots" content="noindex,nofollow")
+
+if key === "top"
+  meta(property="og:type", content="website")
+else
+  meta(property="og:type", content="article")
+meta(property="og:local", content="ja_JP")
+meta(property="og:site_name", content=page.sitename)
+meta(property="og:title", content=page.title)
+meta(property="og:description", content=page.description)
+meta(property="og:url", content=page.url)
+meta(property="og:image", content=page.ogp)
+
+meta(name="twitter:card", content="summary_large_image")
+meta(name="twitter:title", content=page.title)
+meta(name="twitter:description", content=page.description)
+meta(name="twitter:image", content=page.ogp)
+
+script(type="application/ld+json").
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "#{page.sitename}",
+    "url": "#{page.url}",
+    "inLanguage":"jp",
+    "publisher": {
+      "@type": "Organization",
+      "name": "#{page.copyright}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "#{page.ogp}"
+      }
+    },
+    "headline":"#{page.title}",
+    "description":"#{page.description}"
+  }
+link(rel="preconnect" href="https://fonts.googleapis.com")
+link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet")
+//- link(rel="icon", href="/favicon.ico")
+link(rel="canonical", href=page.url)
+link(rel="stylesheet", href="/_assets/css/common.css")
+//- link(rel="stylesheet", href="/_assets/css/fv.css")
+//- link(rel="stylesheet", href="/_assets/css/questions.css")
+//- link(rel="stylesheet", href="/_assets/css/result.css")
+if key !== "top"
+  link(rel="stylesheet", href="/_assets/css/" + key + ".css")
+
+include ../../html/_script2HeadBottom.html

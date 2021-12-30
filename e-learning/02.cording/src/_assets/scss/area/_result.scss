@@ -1,0 +1,151 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+.result {
+  display: flex;
+  margin-top: 10em;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 1em;
+
+  > * {
+    margin-top: 1em;
+  }
+}
+.point {
+  line-height: 1;
+  vertical-align: baseline;
+  .total {
+    font-family: $fontNo;
+    font-size: 12rem;
+    font-weight: bold;
+    color: $color01;
+  }
+  .label {
+    margin-left: .2em;
+    font-size: 4.2rem;
+    font-weight: bold;
+    color: $color01;
+  }
+  .detail {
+    margin-left: 1em;
+    font-size: 1.8rem;
+  }
+}
+.texts {
+  width: 100%;
+  max-width: 670px;
+  .text {
+    font-size: 4.8rem;
+    font-weight: bold;
+  }
+  .msg {
+    font-size: 1.6rem;
+    color: $colorText2;
+  }
+}
+.answers {
+  width: 100%;
+  margin-top: 7em;
+  .caption {
+    font-size: 1.6rem;
+  }
+  .answerList {
+    display: inline-flex;
+    margin-top: 1.5em;
+    font-family: $fontNo;
+    font-size: 1.6rem;
+    flex-wrap: wrap;
+    li {
+      position:relative;
+      width: 6rem;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: $colorText2;
+      }
+      &::before {
+        right: 100%;
+      }
+      &::after {
+        left: 100%;
+      }
+    }
+    .answerNo,
+    .answerCorrect {
+      position: relative;
+      z-index: 1;
+    }
+    .answerNo {
+      padding: 0.2em 0;
+      text-align: center;
+      color: #fff;
+      background: $colorText2;
+    }
+    .answerCorrect {
+      position: relative;
+      width: 100%;
+      height: 3rem;
+      border-bottom: 1px solid $colorText2;
+      background: #fff;
+    }
+    .false {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 1.4rem;
+        height: 1px;
+        background: $colorText;
+      }
+      &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+    .true {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        transform: translate(-50%, -50%);
+        border: 1px solid $colorText;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+.restartBtn {
+  display: block;
+  width: 250px;
+  margin: 10em auto 0;
+  padding: .7em 2.3em;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: .2s;
+  text-align: center;
+  letter-spacing: .2em;
+  color: #fff;
+  background: $color03;
+  &:hover {
+    background: $color01;
+  }
+}

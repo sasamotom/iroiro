@@ -1,0 +1,29 @@
+block vars
+doctype html
+html(dir="ltr" lang="ja")
+  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#")
+
+    include _head
+
+  body(class="page-" + key)
+    include ../../html/_script3Body.html
+
+    if key !== "xxxx"
+    //-  include ../_includes/_header
+
+    main#main
+      block contents
+      //- if key !== "top" && key !== "xxxx"
+      //-  include ../../html/_footContent.html
+
+    //- if key !== "xxxx"
+    //-  footer
+    //-   include ../_includes/_footer
+
+    script(src="/_assets/js/commons~app_ts.js")
+    script(src="/_assets/js/app_ts.js")
+    //- script(src="/_assets/js/commons~app.js")
+    //- script(src="/_assets/js/app.js")
+    //- if key === "top"
+    //-  script(src="/_assets/js/commons~simu.js")
+    //-  script(src="/_assets/js/simu.js")

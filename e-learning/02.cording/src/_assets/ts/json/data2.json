@@ -1,0 +1,124 @@
+{
+  "theme": "元素問題（全5門）",
+  "shuffle": "true",
+  "questions": [
+    {
+      "text": "ハロゲンのものを全て選択してね",
+      "hint": "17族元素 = ハロゲン",
+      "type": "checkbox",
+      "choices":[
+        {
+          "text": "フッ素(F)",
+          "correct": "true"
+        },
+        {
+          "text": "塩素(Cl)",
+          "correct": "true"
+        },
+        {
+          "text": "窒素(N)",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "希ガス元素のものを全て選択してね",
+      "hint": "18族元素 = 希ガス元素",
+      "type": "checkbox",
+      "choices":[
+        {
+          "text": "ヘリウム(He)",
+          "correct": "true"
+        },
+        {
+          "text": "水素(H)",
+          "correct": "false"
+        },
+        {
+          "text": "ネオン(Ne)",
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "text": "ダイヤモンドを構成する元素はどれ？",
+      "hint": "",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "炭素(C)",
+          "correct": "true"
+        },
+        {
+          "text": "硫黄(S)",
+          "correct": "false"
+        },
+        {
+          "text": "アルゴン(Ar)",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "炭素の原子量は12ピッタリ？",
+      "hint": "",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "そうです",
+          "correct": "false"
+        },
+        {
+          "text": "違います",
+          "correct": "true"
+        }
+      ]
+    },
+    {
+      "text": "水の分子量は？（酸素の原子量 = 16 / 水の原子量 = 1）",
+      "hint": "",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "16",
+          "correct": "false"
+        },
+        {
+          "text": "18",
+          "correct": "true"
+        },
+        {
+          "text": "32",
+          "correct": "false"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "pointto": "100",
+      "text": "Excellent!!!!!!!!!",
+      "message": "完璧！最高！"
+    },
+    {
+      "pointto": "99",
+      "text": "おしい！！！！",
+      "message": "もうちょっとでしたね！"
+    },
+    {
+      "pointto": "70",
+      "text": "もう少し！！",
+      "message": "次はきっとうまくいきますよ。"
+    },
+    {
+      "pointto": "50",
+      "text": "頑張ってください。",
+      "message": "理解できないところがあったら、誰かに聞いてくださいね。"
+    },
+    {
+      "pointto": "19",
+      "text": "ん？？？",
+      "message": "ドンマイです。。。"
+    }
+  ]
+}

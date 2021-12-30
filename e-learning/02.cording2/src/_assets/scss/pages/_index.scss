@@ -1,0 +1,8 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+main {
+  padding: 10rem 0;
+}

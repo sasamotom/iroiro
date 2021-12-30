@@ -1,0 +1,221 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+.question {
+  position: relative;
+  z-index: 1;
+  padding: 5%;
+  background: #f7f7f7;
+
+  &.color2 {
+    background: #faf3f3;
+    .qNo {
+      color: $color02;
+    }
+  }
+}
+
+.qNo {
+  font-family: $fontNo;
+  font-size: 7rem;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0;
+  color: $color01;
+}
+.qText {
+  margin-top: .5em;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+.qList {
+  margin-top: 1.2em;
+  font-size: 1.6rem;
+  vertical-align: middle;
+  color: $colorText2;
+  li {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    + li {
+      margin-top: .5em;
+    }
+  }
+}
+.qHint {
+  margin-top: 2em;
+  font-size: 1.4rem;
+  color: $colorText2;
+}
+.nextBtn {
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: .4em 1em;
+  cursor: pointer;
+  transition: .2s;
+  text-align: center;
+  background: $color02;
+  &:hover {
+    background: $color01;
+  }
+  span {
+    position: relative;
+    padding-right:1.2em;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+    color: #fff;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: block;
+      width: .5em;
+      height: .5em;
+      transform: rotate(45deg);
+      animation: goDown .5s linear alternate infinite;
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+    }
+    &::before {
+      top: -10%;
+    }
+    &::after {
+      top: 15%;
+    }
+  }
+  &.finish {
+    padding: 1.5em 1em;
+    background: $color03;
+    span {
+      font-weight: bold;
+    }
+    &:hover {
+      background: $color01;
+    }
+  }
+}
+@keyframes goDown {
+  0% {
+    transform: translateY(0) rotate(45deg);
+  }
+  100% {
+    transform: translateY(50%) rotate(45deg);
+  }
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox'],
+  input[type='radio'] {
+    --active: #f19797;
+    --active-inner: #fff;
+    --focus: 2px #f19797a9;
+    --border: #c5c5c5;
+    --border-hover: #f19797;
+    --background: #fff;
+    --disabled: #f6f8ff;
+    --disabled-inner: #f0c5c5;
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    min-width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    transition: background .3s, border-color .3s, box-shadow .2s;
+    border: 1px solid var(--bc, var(--border));
+    outline: none;
+    background: var(--b, var(--background));
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+    }
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: .3s;
+      --d-t: .6s;
+      --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+    }
+    &:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: .9;
+      &:checked {
+        --b: var(--disabled-inner);
+        --bc: var(--border);
+      }
+      & + label {
+        cursor: not-allowed;
+      }
+    }
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+    &:focus {
+      box-shadow: 0 0 0 var(--focus);
+    }
+    &:not(.switch) {
+      &:after {
+        opacity: var(--o, 0);
+      }
+      &:checked {
+        --o: 1;
+        + label {
+          color: $colorText;
+        }
+      }
+    }
+    & + label {
+      margin-left: .5em;
+      cursor: pointer;
+    }
+  }
+  input[type='checkbox'] {
+    &:not(.switch) {
+      border-radius: 4px;
+      &:after {
+        top: 3px;
+        left: 5px;
+        width: 6px;
+        height: 9px;
+        transform: rotate(var(--r, 20deg));
+        border: 2px solid var(--active-inner);
+        border-top: 0;
+        border-left: 0;
+      }
+      &:checked {
+        --r: 43deg;
+      }
+    }
+  }
+  input[type='radio'] {
+    border-radius: 50%;
+    &:after {
+      width: 16px;
+      height: 16px;
+      transform: scale(var(--s, .7));
+      opacity: 0;
+      border-radius: 50%;
+      background: var(--active-inner);
+    }
+    &:checked {
+      --s: .5;
+    }
+  }
+}

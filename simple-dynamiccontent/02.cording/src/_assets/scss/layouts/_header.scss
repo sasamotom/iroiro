@@ -1,0 +1,21 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: .7em 0;
+  padding-left: 2.5em;
+  background: #333;
+  h1 {
+    display: inline-block;
+    font-family: $fontEn;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    color: #fff;
+  }
+}

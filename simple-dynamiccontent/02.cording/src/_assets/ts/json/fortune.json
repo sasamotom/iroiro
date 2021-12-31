@@ -1,0 +1,36 @@
+{
+  "firsthtml": "<div class=\"fortune\"><div class=\"container\"><div class=\"fortune_pic\"><img src=\"\/_assets\/images\/img_fortune00.svg\" alt=\"\"><\/div><div class=\"fortune_btn\" id=\"goFortune\">占う<\/div><\/div><\/div>",
+  "resulthtml": "<div class=\"fortuneResult result@@resultno@@\"><div class=\"container\"><h2 class=\"fortuneResult_ttl\">@@resultttl@@<\/h2><div class=\"fortuneResult_pic\"><img src=\"\/_assets\/images\/img_fortune@@resultno@@.svg\" alt=\"\"><\/div><p class=\"fortuneResult_txt\">@@resulttxt@@<\/p><div class=\"fortuneResult_btn\" id=\"restartFortune\">もう一度占う<\/div><\/div><\/div>",
+  "results": [
+    {
+      "percentage": "20",
+      "resultno": "01",
+      "resultttl": "大吉",
+      "resulttxt": "いえ〜い！！！！！！"
+    },
+    {
+      "percentage": "30",
+      "resultno": "02",
+      "resultttl": "中吉",
+      "resulttxt": "いいね！！"
+    },
+    {
+      "percentage": "15",
+      "resultno": "03",
+      "resultttl": "小吉",
+      "resulttxt": "ぼちぼちやりましょう。"
+    },
+    {
+      "percentage": "15",
+      "resultno": "04",
+      "resultttl": "吉",
+      "resulttxt": "吉って、小吉より良いの？悪いの？"
+    },
+    {
+      "percentage": "10",
+      "resultno": "05",
+      "resultttl": "凶",
+      "resulttxt": "むぅぅぅ・・・"
+    }
+  ]
+}

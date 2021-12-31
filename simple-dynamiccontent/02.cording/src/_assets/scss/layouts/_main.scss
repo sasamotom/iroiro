@@ -1,0 +1,174 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "sass:math";
+
+main {
+  padding: 15rem 0 5rem;
+}
+
+// TOP
+.top {
+  animation: fadeIn .3s;
+  .menu {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    &_item {
+      width: 20rem;
+    }
+    &_btn {
+      width: 80%;
+      margin: 2em auto 0;
+      padding: 0.5em 1em;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: .2s;
+      text-align: center;
+      background: #eee;
+      &:hover {
+        background: #bbb;
+      }
+    }
+  }
+}
+
+// 単純すぎるやつ
+.simple {
+  animation: fadeIn .3s;
+  .btn {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    li {
+      width: 8em;
+      margin: 0;
+      padding: 0.5em 1em;
+      font-size: 1.6rem;
+      cursor: pointer;
+      text-align: center;
+      background: #eee;
+      &:hover {
+        background: #bbb;
+      }
+    }
+  }
+  .textArea {
+    width: 50%;
+    min-height: 5em;
+    margin: 2em auto 0;
+    padding: .5em;
+    border: 1px solid #000;
+  }
+}
+
+.article {
+  overflow: hidden;
+  animation: fadeIn .3s;
+  img {
+    float: right;
+    width: 30%;
+    max-width: 40rem;
+    margin-bottom: 2em;
+    margin-left: 4em;
+  }
+  .pagebtn {
+    display: flex;
+    width: 15em;
+    margin: 1em auto 0;
+    &_pre,
+    &_next{
+      width: 6em;
+      padding: .5em 0;
+      cursor: pointer;
+      transition: .3s;
+      text-align: center;
+      border: 1px solid #000;
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
+    &_pre {
+      margin-right: auto;
+      margin-left: 0;
+
+      + .pagebtn_next {
+        margin-left: 2em;
+      }
+    }
+    &_next {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  .pageNo {
+    margin-top: 2em;
+    text-align: center;
+  }
+}
+
+// 占い
+.fortune {
+  animation: fadeIn .1s;
+  &_pic {
+    width: 40%;
+    margin: 0 auto;
+  }
+  &_btn {
+    width: 10em;
+    margin: 0 auto;
+    padding: .8em 0;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: .3s;
+    text-align: center;
+    border-radius: 2px;
+    background: #ccef9c;
+    &:hover {
+      background: #94d3de;
+    }
+  }
+}
+.fortuneResult {
+  // animation: fadeIn .1s;
+  &_ttl {
+    font-size: 7rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  &_pic {
+    width: 30%;
+    margin: 0 auto;
+  }
+  &_txt {
+    margin-top: 0.5em;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  &_btn {
+    width: 10em;
+    margin: 0 auto;
+    margin-top: 3em;
+    padding: .6em 0;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: .3s;
+    text-align: center;
+    border-radius: 2px;
+    background: #ccef9c;
+    &:hover {
+      background: #94d3de;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fromRight {
+  0% { transform: translateX(100vh); }
+  100% { transform: none; }
+}

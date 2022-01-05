@@ -35,7 +35,7 @@ export class DynamicContent {
   // 返値： なし
   //----------------------------------------------------
   public show = () => {
-    this._element.style.display = 'block;'         // 表示する
+    this._element.style.display = 'block';         // 表示する
   }
 
   //----------------------------------------------------
@@ -63,7 +63,8 @@ export class DynamicContent {
 
   //----------------------------------------------------
   // 機能： htmlを更新する
-  // 引数： なし
+  // 引数： html      html文
+  //      paramSet  置換パラメータ
   // 返値： なし
   //----------------------------------------------------
   public setHmtl = (html: string, paramSet?: ParamSet[]) => {
@@ -74,6 +75,25 @@ export class DynamicContent {
     }
     // 要素を追加する
     this._addElement();
+  }
+
+  //----------------------------------------------------
+  // 機能： イベントを登録する
+  // 引数： eventInfo イベント情報（配列）
+  // 返値： なし
+  //----------------------------------------------------
+  public setEvents = (eventInfo: EventInfo[]) => {
+    // イベントを監視し、発生時にはイベントを発火する
+    for (let i = 0; i < eventInfo.length; i++) {
+      // 要素の有無チェックし、無い場合は次に進む
+      if (!document.getElementById(eventInfo[i].elementId)) {
+        continue;
+      }
+      // イベント情報の保存
+      this._eventInfo.push(eventInfo[i]);
+      // イベントの登録
+      document.getElementById(eventInfo[i].elementId)!.addEventListener(eventInfo[i].type, this._dispatchEvent);
+    }
   }
 
   //----------------------------------------------------
@@ -119,25 +139,6 @@ export class DynamicContent {
     for (let i = 0; i < paramSet.length; i++) {
       this._html = this._html.replace(paramSet[i].key, paramSet[i].value);
       this._html = this._html.split(paramSet[i].key).join(paramSet[i].value);
-    }
-  }
-
-  //----------------------------------------------------
-  // 機能： イベントを登録する
-  // 引数： eventInfo イベント情報（配列）
-  // 返値： なし
-  //----------------------------------------------------
-  public setEvents = (eventInfo: EventInfo[]) => {
-    // イベントを監視し、発生時にはイベントを発火する
-    for (let i = 0; i < eventInfo.length; i++) {
-      // 要素の有無チェックし、無い場合は次に進む
-      if (!document.getElementById(eventInfo[i].elementId)) {
-        continue;
-      }
-      // イベント情報の保存
-      this._eventInfo.push(eventInfo[i]);
-      // イベントの登録
-      document.getElementById(eventInfo[i].elementId)!.addEventListener(eventInfo[i].type, this._dispatchEvent);
     }
   }
 

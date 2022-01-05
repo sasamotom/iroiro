@@ -1,4 +1,4 @@
-import fortuneData from "./json/fortune.json";
+import fortuneData from "./json/fortune.json";            // 占いのデータ
 import { DynamicContent } from "./class/DynamicContent";
 import { ParamSet } from "./class/ParamSet";
 import { EventInfo } from "./class/EventInfo";
@@ -118,11 +118,12 @@ function goSimplePage() {
   // html表示
   dc.show();
 
-  // テキスト追加ボタン押下時にshowNext関数を実行する
+  // テキスト追加ボタン押下時にshowContents関数を実行する
   const add = document.getElementById('addBtn');
   if (add) {
     add.addEventListener('click', showContents);
   }
+  // テキスト削除ボタン押下時にdeleteContents関数を実行する
   const del = document.getElementById('delBtn');
   if (del) {
     del.addEventListener('click', deleteContents);
@@ -143,7 +144,7 @@ function goSimplePage() {
   // コンテンツを削除する
   //----------------------------------------------------
   function deleteContents() {
-    // 「ボタン押下されたよ」メッセージを画面に表示する
+    // テキストを消す
     const div = document.getElementById('textArea');
     if (div) {
       div.innerHTML = '';
@@ -193,10 +194,10 @@ articleHtml.push(`
 <div class="article container">
   <img src="/_assets/images/img_artic03.svg" alt="">
   <p class="txt">
-  Laborum sit est culpa nulla enim. Cillum ad quis officia eiusmod incididunt deserunt ad ad ex non nulla. Nisi tempor sit laborum veniam reprehenderit velit ullamco fugiat ea qui eu irure laboris qui. Lorem irure deserunt anim cupidatat sint id tempor et commodo. Reprehenderit duis tempor veniam reprehenderit cupidatat voluptate laboris irure culpa. Sint reprehenderit voluptate aliquip ipsum mollit tempor amet elit cupidatat aute Lorem cillum et.<br>
-  Id voluptate dolor tempor et nostrud ut laboris elit sit culpa magna cupidatat amet. Aliqua tempor sunt eu non dolore adipisicing qui ut nisi ipsum enim magna fugiat elit. Id reprehenderit aute cillum eiusmod. Ea ipsum reprehenderit tempor magna nulla id culpa consequat. Anim minim consectetur consequat labore nostrud deserunt magna. Officia aliqua minim nisi do amet veniam dolore. Reprehenderit ex mollit aute incididunt cillum enim reprehenderit cupidatat officia consectetur nulla officia elit.<br>
-  Eiusmod mollit excepteur labore dolore id reprehenderit fugiat reprehenderit aliqua commodo mollit Lorem ex. Ea mollit deserunt sint sit fugiat id consequat. Ea duis nostrud eiusmod ad irure quis reprehenderit. Incididunt cupidatat labore ex labore consequat culpa. Elit nisi nulla ut non quis consequat magna reprehenderit esse quis. Nisi nisi in laboris nostrud tempor adipisicing laboris eu exercitation occaecat dolor.<br>
-  Qui nulla elit magna cupidatat magna nostrud esse cupidatat. Commodo culpa culpa ex eiusmod eu do labore voluptate in amet reprehenderit officia esse minim. Nostrud ex officia veniam nostrud. Do fugiat sunt magna irure ipsum mollit qui mollit est pariatur elit ipsum Lorem enim. Nisi deserunt excepteur sunt exercitation consequat adipisicing eiusmod qui duis mollit excepteur sit irure. Ea culpa amet tempor aute. Eiusmod cillum adipisicing occaecat non veniam pariatur deserunt ad exercitation aliquip.
+    Laborum sit est culpa nulla enim. Cillum ad quis officia eiusmod incididunt deserunt ad ad ex non nulla. Nisi tempor sit laborum veniam reprehenderit velit ullamco fugiat ea qui eu irure laboris qui. Lorem irure deserunt anim cupidatat sint id tempor et commodo. Reprehenderit duis tempor veniam reprehenderit cupidatat voluptate laboris irure culpa. Sint reprehenderit voluptate aliquip ipsum mollit tempor amet elit cupidatat aute Lorem cillum et.<br>
+    Id voluptate dolor tempor et nostrud ut laboris elit sit culpa magna cupidatat amet. Aliqua tempor sunt eu non dolore adipisicing qui ut nisi ipsum enim magna fugiat elit. Id reprehenderit aute cillum eiusmod. Ea ipsum reprehenderit tempor magna nulla id culpa consequat. Anim minim consectetur consequat labore nostrud deserunt magna. Officia aliqua minim nisi do amet veniam dolore. Reprehenderit ex mollit aute incididunt cillum enim reprehenderit cupidatat officia consectetur nulla officia elit.<br>
+    Eiusmod mollit excepteur labore dolore id reprehenderit fugiat reprehenderit aliqua commodo mollit Lorem ex. Ea mollit deserunt sint sit fugiat id consequat. Ea duis nostrud eiusmod ad irure quis reprehenderit. Incididunt cupidatat labore ex labore consequat culpa. Elit nisi nulla ut non quis consequat magna reprehenderit esse quis. Nisi nisi in laboris nostrud tempor adipisicing laboris eu exercitation occaecat dolor.<br>
+    Qui nulla elit magna cupidatat magna nostrud esse cupidatat. Commodo culpa culpa ex eiusmod eu do labore voluptate in amet reprehenderit officia esse minim. Nostrud ex officia veniam nostrud. Do fugiat sunt magna irure ipsum mollit qui mollit est pariatur elit ipsum Lorem enim. Nisi deserunt excepteur sunt exercitation consequat adipisicing eiusmod qui duis mollit excepteur sit irure. Ea culpa amet tempor aute. Eiusmod cillum adipisicing occaecat non veniam pariatur deserunt ad exercitation aliquip.
   </p>
   <p class="pageNo">3 / 3</p>
   <ul class="pagebtn">

@@ -1,0 +1,61 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+
+$itemCnt: 11;
+$picWidth: 100px;
+$interval: 30px;
+$r: math.div(($picWidth + $interval) * $itemCnt, 2 * math.$pi);
+.picList {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  transform: rotateX(-5deg);
+  transform: rotate3d(1,0,0,-5deg);
+  transform-style: preserve-3d;
+  perspective: (2 * $r);
+}
+
+.pic {
+  width: $picWidth;
+  // height: $picWidth;
+  padding: 1em;
+  background: #eee;
+  position: absolute;
+  left: calc(50% - $picWidth / 2);
+  top: 50%;
+  opacity: 0.9;
+  transition: .5s;
+  &_name {
+    transition: .5s;
+    opacity: 0;
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 105%;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@for $childNo from 1 through $itemCnt {
+  @for $frontNo from 1 through $itemCnt {
+    $rad: math.div(math.$pi * 2 * ($childNo - $frontNo), $itemCnt);
+
+    .picList[data-front='#{$frontNo}'] {
+      .pic:nth-child(#{$childNo}) {
+        background: rgb(255 - 10 * $childNo, 238, 20 * $childNo);
+        transform: translate3d($r * math.sin($rad),0,$r * math.cos($rad)) rotateY($rad + rad);
+        z-index: math.ceil($itemCnt * math.cos($rad));
+        @if ($childNo == $frontNo) {
+          .pic_name {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+

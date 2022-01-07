@@ -1,0 +1,10 @@
+node_modules/
+htdocs/
+yarn-error.log
+db_data
+
+# WordPress
+/wp-content/*
+!/wp-content/uploads/
+!/wp-content/plugins/
+!/wp-content/themes/

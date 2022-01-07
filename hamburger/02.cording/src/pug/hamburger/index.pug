@@ -1,0 +1,10 @@
+extends ../_base/_layout
+
+block vars
+  include ../_base/_settings
+  - let key = "hamburger"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  include ../../html/_hamburger/_index.html

@@ -1,0 +1,9 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+
+//-----------------汎用クラス//
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

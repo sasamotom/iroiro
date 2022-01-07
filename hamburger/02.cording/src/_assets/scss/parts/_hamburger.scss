@@ -1,0 +1,174 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+.navBtn {
+  position: fixed;
+  z-index: 11;
+  top: .5rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  background: #fff;
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 50%;
+    height: 1px;
+    transition: .5s;
+    transform: translate(-50%, -50%);
+    background: #555;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: .5s;
+      background: #555;
+    }
+    &::before {
+      transform: translateY(.5rem);
+    }
+    &::after {
+      transform: translateY(-.5rem);
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: -100vw;
+  width: 100%;
+  max-width: 40rem;
+  height: 100%;
+  transition: .5s;
+
+  a {
+    position: relative;
+    display: block;
+    padding: 0.5em 0;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-decoration: none;
+    color: #333;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: calc(.65em + 0.20710678 * .5em);
+      display: block;
+      width: .5em;
+      height: .5em;
+      transform: translateY(-50%) rotate(45deg);
+      border-top: 1px solid #555;
+      border-right: 1px solid #555;
+    }
+  }
+
+  .navContainer {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding: 5rem 5%;
+    background: #f3f3f3;
+
+    > ul {
+      > li {
+        position: relative;
+        z-index: 0;
+        border-bottom: 1px solid #555;
+        &:first-child {
+          border-top: 1px solid #555;
+        }
+      }
+      button {
+        position: absolute;
+        z-index: 1;
+        top: .5em;
+        right: 0;
+        width: 2em;
+        height: 1.5em;
+        padding: 0;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: #f3f3f3;
+        appearance: none;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: block;
+          width: .7em;
+          height: 1px;
+          transition: .5s;
+          transform: translate(-50%, -50%);
+          background: #555;
+        }
+        &::after {
+          transform:  translate(-50%, -50%) rotate(90deg);
+        }
+      }
+    }
+    // 子メニュー
+    > ul > li > ul {
+      display: none;  // 初期状態ではアコーディオンを閉じた状態にする
+      li {
+        padding-left: 1em;
+        border-bottom: 1px solid #555;
+        &:first-child {
+          border-top: 1px solid #555;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// メニュー表示中
+nav.active {
+  right: 0;
+
+  .navBtn {
+    span {
+      transform: translate(-50%, -50%) rotate(-135deg);
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+// アコーディオンOPEN中
+nav .navContainer > ul {
+  li.open {
+    button {
+      &::before {
+        transform:  translate(-50%, -50%) rotate(-180deg);
+      }
+      &::after {
+        transform:  translate(-50%, -50%) rotate(-180deg);
+      }
+    }
+  }
+}

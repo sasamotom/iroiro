@@ -1,0 +1,48 @@
+<p>くるくるコーディング用のページ</p>
+<p>まだ考え中のため、ここで一旦ストップ。これ以上は別のところで作業する</p>
+
+<ul class="picList" id="picList" data-front="1">
+  <li class="pic"><p class="pic_name">かえる1</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる2</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる3</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる4</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる5</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる6</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる7</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる8</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる9</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる10</p><img src="/_assets/images/img001.svg" alt=""></li>
+  <li class="pic"><p class="pic_name">かえる11</p><img src="/_assets/images/img001.svg" alt=""></li>
+</ul>
+
+<div style="text-align: center;">
+  <div class="btn" id="btn" style="display: inline-block; padding: 0.2em 1em; background: #eee; cursor: pointer;">
+    左に回す
+  </div>
+  <div class="btn" id="btn2" style="margin-left: 2em; display: inline-block; padding: 0.2em 1em; background: #eee; cursor: pointer;">
+    右に回す
+</div>
+</div>
+
+<script>
+  document.getElementById('btn').addEventListener('click', () => {
+    let frontNo = document.getElementById('picList').dataset.front;
+    if (frontNo >= 11) {
+      frontNo = 1;
+    }
+    else {
+      frontNo++;
+    }
+    document.getElementById('picList').dataset.front = frontNo;
+  });
+  document.getElementById('btn2').addEventListener('click', () => {
+    let frontNo = document.getElementById('picList').dataset.front;
+    if (frontNo <= 1) {
+      frontNo = 11;
+    }
+    else {
+      frontNo--;
+    }
+    document.getElementById('picList').dataset.front = frontNo;
+  });
+</script>

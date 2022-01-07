@@ -1,0 +1,82 @@
+*********************************************************
+  ハンバーガーメニュー、アコーディオンメニュー
+    2022/01
+*********************************************************
+
+【システム概要】
+WebComponentsのハンバーガーメニュー
+
+
+
+【ディレクトリ構成】
+/01.document
+  なし
+
+/02.cording
+  ・ソース一式
+    src/_assets/ts/
+      classディレクトリ             WebComponentsを使用しない場合のクラス（静的なnavは現在コメントアウトしてある）
+      webcomponentsディレクトリ     上記をWebComponents版に作り替えたもの
+
+
+
+【前提】
+・ハンバーガーメニューをWebコンポーネント化してみる！！！
+
+
+
+【こうなった】
+・アコーディオンも必要になったので用意した（処理は以前小西さんが共有してくれたものを使用した）
+・CSSだが、SCSSで記述してしまうためそのままをTSにもってこれない。なので、importするようにした。
+・TSにSCSSで記述して、内部的にCSSに変換したり、ベンダープレフィックスを付ける機能ってないかな〜と思った。
+  それがあれば、TS内にCSSを用意できる。それを自分で作ろうとは思えなかった。
+・SP版ではハンバーガーメニュー、PC版では固定ヘッダーみたいにできればよかったけど、そこまでやると面倒だし複雑になりそうなのでやめといた。（めんどいけど、いつかはやったほうがいいなぁ〜。。。）
+
+
+
+【どう使うか 例】
+①WebComponentsの右から出てくるverを使用する場合
+  [html内の記述]
+    <hamburger-menu></hamburger-menu>
+
+  [ts内の記述]
+    import { Hamburger } from "./webcomponents/Hamburger";
+    customElements.define('hamburger-menu', Hamburger);
+
+
+②WebComponentsの上から出てくるverを使用する場合
+  [html内の記述]
+    <hamburger-menu></hamburger-menu>
+
+  [ts内の記述]
+    import { HamburgerFromTop } from "./webcomponents/HamburgerFromTop";
+    customElements.define('hamburger-menu', HamburgerFromTop);
+
+③静的なものを使用する場合
+  [html内の記述]
+    <nav id="nav">
+      <div class="navContainer">
+        <div class="navBtn" id="navBtn"><span></span></div>
+        <ul>
+          <li><a href="/">TOP</a></li>
+          <li><a href="/page1/">Page 1</a></li>
+          <li>
+            <button></button>
+            <a href="/hamburger/">子リンクがあるやつ（ないけど）</a>
+            <ul>
+              <li><a href="#">こども いち</a></li>
+              <li><a href="#">こども に</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  [ts内の記述]
+    import { HamburgerMenu } from "./class/HamburgerMenu";
+    new HamburgerMenu();
+
+
+
+【その他メモ】
+・作成中のくるくるアニメーションが入っている。これは別のところに移動させて引き続き作業。

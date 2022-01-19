@@ -1,0 +1,12 @@
+extends ../_base/_layout
+
+block vars
+  include ../_base/_settings
+  - let key = "page1"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  p Page 1
+  .box(style="margin-top: 1em; width: 50%; height: 80vh; background: #ddd;") 箱1 SP版にてスクロールしないことチェック用
+  .box(style="margin-top: 1em; width: 50%; height: 80vh; background: #ddd;") 箱2

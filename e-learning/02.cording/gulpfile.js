@@ -336,6 +336,6 @@ gulp.task('build', callback => {
   runSequence(
     ['clean:images', 'clean:scripts', 'copy'],
     ['styles', 'scripts', 'imagemin', 'pug'],
-    ['htmlmin', 'revision'],
+    ['htmlmin'],
     callback);
 });

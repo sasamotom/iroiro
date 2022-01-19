@@ -1,0 +1,124 @@
+{
+  "theme": "趣味丸出し！昭和ライダー編（全5門）",
+  "shuffle": "true",
+  "questions": [
+    {
+      "text": "ライダー名と変身する人の名前が合っているものを全て選択せよ",
+      "hint": "",
+      "type": "checkbox",
+      "choices":[
+        {
+          "text": "１号 / 本郷猛",
+          "correct": "true"
+        },
+        {
+          "text": "２号 / 一文字隼人",
+          "correct": "true"
+        },
+        {
+          "text": "V3 / 結城丈二",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "海に特化したライダーは？",
+      "hint": "主題歌が「セタップ！セタップ！セタップ！」から始まるやつ",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "X",
+          "correct": "true"
+        },
+        {
+          "text": "アマゾン",
+          "correct": "false"
+        },
+        {
+          "text": "ストロンガー",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "Vジェットを使用するのは？",
+      "hint": "蜂モチーフのカッコイイやつ",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "スカイライダー",
+          "correct": "false"
+        },
+        {
+          "text": "スーパー１",
+          "correct": "true"
+        },
+        {
+          "text": "ZX",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "ロボライダー（BLACK RXの自己進化形態）は何の感情由来？",
+      "hint": "",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "悲しみ",
+          "correct": "true"
+        },
+        {
+          "text": "怒り",
+          "correct": "false"
+        }
+      ]
+    },
+    {
+      "text": "信じるやつは？",
+      "hint": "仮面ライダーBLACKの主題歌より",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "正義（ジャスティス）",
+          "correct": "true"
+        },
+        {
+          "text": "戦士（ソルジャー）",
+          "correct": "false"
+        },
+        {
+          "text": "宇宙（コスモ）",
+          "correct": "false"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "pointto": "100",
+      "text": "きたー！！！",
+      "message": "簡単すぎましたよね〜！！！"
+    },
+    {
+      "pointto": "99",
+      "text": "おしい！！！！",
+      "message": "もう少しで世界を救えますね"
+    },
+    {
+      "pointto": "60",
+      "text": "もう少し！！",
+      "message": "平成ライダー派ですか？"
+    },
+    {
+      "pointto": "40",
+      "text": "あれ？ウルトラマン派ですか？？",
+      "message": "もしくはスーパー戦隊？？？私はダイレンジャー派。"
+    },
+    {
+      "pointto": "19",
+      "text": "ん？？？",
+      "message": "確率的に１問は当たりそうですが。。。"
+    }
+  ]
+}

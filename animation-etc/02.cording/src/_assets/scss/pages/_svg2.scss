@@ -1,0 +1,44 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+.fe-area {
+  width: 100%;
+  max-width: 500px;
+  margin: 100px auto 0;
+  border-top: 1px solid #aaa;
+
+  p {
+    margin-top: 30px;
+  }
+}
+
+.emblem-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+.emblem,
+.emblem-anime {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.border-box {
+  width: 400px;
+  height: 600px;
+  background: #000;
+}
+
+.square {
+  color: rgb(202, 230, 44);
+  transition: .2s;
+
+  &:hover {
+    color: #ff0;
+  }
+}

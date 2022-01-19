@@ -16,14 +16,11 @@ html(dir="ltr" lang="ja")
       //- if key !== "top" && key !== "xxxx"
       //-  include ../../html/_footContent.html
 
-    //- if key !== "xxxx"
-    //-  footer
-    //-   include ../_includes/_footer
+    if key !== "top"
+     footer
+      include ../_includes/_footer
 
     //- script(src="/_assets/js/commons~app_ts.js")
     script(src="/_assets/js/app_ts.js")
-    //- script(src="/_assets/js/commons~app.js")
-    //- script(src="/_assets/js/app.js")
-    //- if key === "top"
-    //-  script(src="/_assets/js/commons~simu.js")
-    //-  script(src="/_assets/js/simu.js")
+    script(src="/_assets/js/commons~app.js")
+    script(src="/_assets/js/app.js")

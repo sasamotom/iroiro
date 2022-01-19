@@ -1,0 +1,20 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+.aos-box {
+  margin-top: 100vh;
+}
+
+p[class^=fade] {
+  width: 80%;
+  margin: 50px auto;
+  padding: 30vh 0;
+  font-size: 32px;
+  text-align: center;
+  background: #eee;
+}
+
+// aos.scssの方に以下の記述を入れている。
+// @forward "~aos/dist/aos.css";

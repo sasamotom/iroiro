@@ -1,0 +1,60 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.sec {
+  padding-top: 100px;
+  transition: 0.5s;
+  opacity: 0;
+
+  &__ttl {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  &__pic {
+    margin-top: 20px;
+    animation: fuwafuwa 2s infinite;
+    text-align: center;
+    img {
+      width: auto;
+      max-width: 400px;
+    }
+  }
+
+  &__txt {
+    margin-top: 50px;
+    font-size: 16px;
+  }
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.show {
+  opacity: 1;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: none;
+  }
+}

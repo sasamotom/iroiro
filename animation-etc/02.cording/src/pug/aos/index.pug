@@ -1,0 +1,21 @@
+extends ../_base/_layout
+
+block vars
+  include ../_base/_settings
+  - let key = "aos"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  .container
+    h1 AOS
+      .aos-box
+        p.fade-up(data-aos="fade-up") FADE-UP
+        p.fade-in(data-aos="zoom-in-down") zoom-in-down
+        p.fade-up(data-aos="fade-right") FADE-RIGHT
+        p.fade-in(data-aos="flip-left") flip-left
+        p 参考URL
+          br
+          a(href="https://michalsnik.github.io/aos/" target="_blank") https://michalsnik.github.io/aos/
+          br
+          a(href="https://moshashugyo.com/media/aos" target="_blank") https://moshashugyo.com/media/aos

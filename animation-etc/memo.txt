@@ -20,5 +20,11 @@
 【こうなった】
 ・kurukuru    ：CSSのみでどこまで3D表現ができるのかやって見た結果。不完全。
 ・kurukuru2   ：kurukurの改良版。想定通りの動作をする。
-
+・svg         ：SVGのアニメーション。パスに沿って線を引くような感じのやつ。
+・svg2        ：SVGのマスクと、マスクを使用してアニメーションさせたもの。
+                あと、SMILっていうSVG内に変形の指示などを記載するやり方のアニメーションみたいな感じのやつ。
+                SVGって結構色々できる。
+・aos         ：AOS（Animate On Scroll Library）を使用して、スクロール時に要素を表示するサンプル。
+・webanimation：Web Animation APIを使用して、要素（このサンプルの場合は円）を移動させたりストップさせたり逆再生したり。
+・intersection：Intersection Observerを使用して、スクロール時に要素を表示するサンプル。
 

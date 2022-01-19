@@ -1,0 +1,23 @@
+extends ../_base/_layout
+
+block vars
+  include ../_base/_settings
+  - let key = "webanimation"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  .container
+    h1 Web Animation API
+      .web-anime-api-box
+        .ball-container
+          .ball#ball
+        ul.btns
+          li.btn#play PLAY
+          li.btn#pause PAUSE
+          li.btn#reset RESET
+          li.btn#reverse REVERSE
+          li.btn#x2 x2
+      p 参考URL
+        br
+        a(href="https://developer.mozilla.org/ja/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API" target="_blank") https://developer.mozilla.org/ja/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API

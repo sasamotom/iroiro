@@ -1,0 +1,31 @@
+extends ../_base/_layout
+
+block vars
+  include ../_base/_settings
+  - let key = "intersection"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  .container
+    section.sec#sec1
+      h2.sec__ttl SEC1
+      .sec__pic
+        img(src="/_assets/images/img001.svg", alt="かえる", width="404", height="512", loading="lazy")
+      p.sec__txt Sit aliquip magna elit cupidatat sit Lorem ut excepteur nostrud nulla consectetur in nostrud ea. Laboris pariatur enim consequat dolor irure eiusmod. Do magna officia cillum quis do.
+    section.sec#sec2
+      h2.sec__ttl SEC2
+      .sec__pic
+        img(src="/_assets/images/img001.svg", alt="かえる", width="404", height="512", loading="lazy")
+      p.sec__txt Consectetur id exercitation voluptate nisi sit. Proident id culpa adipisicing velit laborum nostrud. Incididunt reprehenderit dolore nostrud in nulla culpa mollit pariatur mollit consequat fugiat.
+    section.sec#sec3
+      h2.sec__ttl SEC3
+      .sec__pic
+        img(src="/_assets/images/img001.svg", alt="かえる", width="404", height="512", loading="lazy")
+      p.sec__txt Cillum mollit tempor est consectetur. Officia sunt officia nulla sit pariatur exercitation laboris esse laborum sunt aliqua labore ad. Consectetur reprehenderit voluptate exercitation et elit veniam consectetur labore in.
+
+    p 参考URL
+      br
+      a(href="https://firstlayout.net/animation-on-elements-entered-on-the-screen/" target="_blank") https://firstlayout.net/animation-on-elements-entered-on-the-screen/
+      br
+      a(href="https://ics.media/entry/190902/" target="_blank") https://ics.media/entry/190902/

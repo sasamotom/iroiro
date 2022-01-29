@@ -1,0 +1,395 @@
+{
+  "theme": "EGシンクロ度診断",
+  "shuffle": "非対応",
+  "questions": [
+    {
+      "qid": "q1",
+      "text": "好きな色は？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "白",
+          "code": "wh"
+        },
+        {
+          "text": "灰色",
+          "code": "gr"
+        },
+        {
+          "text": "黒",
+          "code": "bl"
+        },
+        {
+          "text": "赤",
+          "code": "re"
+        },
+        {
+          "text": "ピンク",
+          "code": "pi"
+        },
+        {
+          "text": "橙",
+          "code": "or"
+        },
+        {
+          "text": "黄",
+          "code": "ye"
+        },
+        {
+          "text": "黄緑",
+          "code": "yg"
+        },
+        {
+          "text": "緑",
+          "code": "gr"
+        },
+        {
+          "text": "水色",
+          "code": "wa"
+        },
+        {
+          "text": "青",
+          "code": "ao"
+        },
+        {
+          "text": "紫",
+          "code": "pu"
+        },
+        {
+          "text": "茶",
+          "code": "br"
+        },
+        {
+          "text": "金",
+          "code": "go"
+        },
+        {
+          "text": "銀",
+          "code": "si"
+        }
+      ]
+    },
+    {
+      "qid": "q2",
+      "text": "何派？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "犬",
+          "code": "do"
+        },
+        {
+          "text": "猫",
+          "code": "ca"
+        },
+        {
+          "text": "鳥",
+          "code": "bi"
+        },
+        {
+          "text": "その他",
+          "code": "99"
+        }
+      ]
+    },
+    {
+      "qid": "q3",
+      "text": "好きだった科目は？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "国語",
+          "code": "ja"
+        },
+        {
+          "text": "数学",
+          "code": "ma"
+        },
+        {
+          "text": "英語",
+          "code": "en"
+        },
+        {
+          "text": "理科",
+          "code": "sc"
+        },
+        {
+          "text": "社会",
+          "code": "so"
+        },
+        {
+          "text": "体育",
+          "code": "pe"
+        }
+      ]
+    },
+    {
+      "qid": "q4",
+      "text": "どちらかと言えば？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "ポジティブ",
+          "code": "po"
+        },
+        {
+          "text": "ネガティブ",
+          "code": "ne"
+        }
+      ]
+    },
+    {
+      "qid": "q5",
+      "text": "お腹が空いたけど家に食べるものがない！どうする？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "買い物 or 外食へGO",
+          "code": "go"
+        },
+        {
+          "text": "出前を頼む",
+          "code": "de"
+        },
+        {
+          "text": "飲み物でしのぐ",
+          "code": "dr"
+        },
+        {
+          "text": "寝る",
+          "code": "sl"
+        },
+        {
+          "text": "その他",
+          "code": "99"
+        }
+      ]
+    },
+    {
+      "qid": "q6",
+      "text": "アウトドア派？インドア派？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "アウトドア",
+          "code": "ou"
+        },
+        {
+          "text": "インドア",
+          "code": "in"
+        }
+      ]
+    },
+    {
+      "qid": "q7",
+      "text": "きのこ派？たけのこ派？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "きのこの山",
+          "code": "kn"
+        },
+        {
+          "text": "たけのこの里",
+          "code": "tk"
+        },
+        {
+          "text": "アルフォート",
+          "code": "al"
+        },
+        {
+          "text": "なんでもいいよ",
+          "code": "bo"
+        }
+      ]
+    },
+    {
+      "qid": "q8",
+      "text": "お酒好き？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "好き",
+          "code": "ye"
+        },
+        {
+          "text": "嫌い",
+          "code": "no"
+        }
+      ]
+    },
+    {
+      "qid": "q9",
+      "text": "好きな季節は？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "春",
+          "code": "sp"
+        },
+        {
+          "text": "夏",
+          "code": "su"
+        },
+        {
+          "text": "秋",
+          "code": "au"
+        },
+        {
+          "text": "冬",
+          "code": "wi"
+        }
+      ]
+    },
+    {
+      "qid": "q10",
+      "text": "この中ならどこに行きたい？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "水族館",
+          "code": "aq"
+        },
+        {
+          "text": "美術館",
+          "code": "ar"
+        },
+        {
+          "text": "博物館",
+          "code": "mu"
+        },
+        {
+          "text": "映画館",
+          "code": "th"
+        }
+      ]
+    },
+    {
+      "qid": "q11",
+      "text": "何にDIVEしたい？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "海",
+          "code": "se"
+        },
+        {
+          "text": "ベッド",
+          "code": "be"
+        },
+        {
+          "text": "技術・知識",
+          "code": "te"
+        },
+        {
+          "text": "新しい世界",
+          "code": "wo"
+        }
+      ]
+    },
+    {
+      "qid": "q12",
+      "text": "好きな言語は？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "Html",
+          "code": "ht"
+        },
+        {
+          "text": "Css",
+          "code": "cs"
+        },
+        {
+          "text": "Pug",
+          "code": "pu"
+        },
+        {
+          "text": "Scss",
+          "code": "sc"
+        },
+        {
+          "text": "JavaScript",
+          "code": "js"
+        },
+        {
+          "text": "TypeScript",
+          "code": "ts"
+        },
+        {
+          "text": "Php",
+          "code": "ph"
+        }
+      ]
+    },
+    {
+      "qid": "q13",
+      "text": "この中だったらどれを飲む？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "コーヒー",
+          "code": "co"
+        },
+        {
+          "text": "ウィスキー",
+          "code": "wh"
+        },
+        {
+          "text": "蜂蜜",
+          "code": "ho"
+        }
+      ]
+    },
+    {
+      "qid": "q14",
+      "text": "この中だったらどれを食べる？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "アボカド",
+          "code": "av"
+        },
+        {
+          "text": "イカ",
+          "code": "ik"
+        },
+        {
+          "text": "豚",
+          "code": "po"
+        }
+      ]
+    },
+    {
+      "qid": "q15",
+      "text": "同担拒否！誰担？",
+      "type": "radio",
+      "choices":[
+        {
+          "text": "三上担",
+          "code": "mk"
+        },
+        {
+          "text": "小西担",
+          "code": "kn"
+        },
+        {
+          "text": "ゆうじ担",
+          "code": "yj"
+        },
+        {
+          "text": "野口担",
+          "code": "ng"
+        },
+        {
+          "text": "今村担",
+          "code": "im"
+        },
+        {
+          "text": "推しの名前がここにはない",
+          "code": "99"
+        }
+      ]
+    }
+  ]
+}

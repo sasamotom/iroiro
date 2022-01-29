@@ -1,0 +1,128 @@
+extends ./_base/_layout
+
+block vars
+  include ./_base/_settings
+  - let key = "top"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  synchro-area
+
+  //- fv-area
+  //-   .fvContainer
+  //-     p.theme アンケートご協力のお願い（選択式10問）
+  //-     p.message いくつかご質問にお答えください。
+  //-     .okBtn#ok OK
+
+  //- question-area
+    //- .questionContainer
+    //-   .container
+    //-     .question
+    //-       p.qNo 01
+    //-       p.qText 正しいものはどれだ？
+    //-       ul.qList#q1
+    //-         li
+    //-           input(name="radioq1" type="radio" id="q1-1")
+    //-           label(for="q1-1") テキストテキストテキスト
+    //-         li
+    //-           input(name="radioq1" type="radio" id="q1-2")
+    //-           label(for="q1-2") テキストテキストテキスト
+    //-         li
+    //-           input(name="radioq1" type="radio" id="q1-3")
+    //-           label(for="q1-3") テキストテキストテキスト
+    //-       .nextBtn#next
+    //-         span NEXT
+  //- question-area
+  //-   .questionContainer
+  //-     .container
+  //-       .question
+  //-         p.qNo 02
+  //-         p.qText 正しいものはどれだ？
+  //-         ul.qList#q2
+  //-           li
+  //-             input(name="checkq2" type="checkbox" id="q2-1")
+  //-             label(for="q2-1") テキストテキストテキスト
+  //-           li
+  //-             input(name="checkq2" type="checkbox" id="q2-2")
+  //-             label(for="q2-2") テキストテキストテキスト
+  //-           li
+  //-             input(name="checkq2" type="checkbox" id="q2-3")
+  //-             label(for="q2-3") テキストテキストテキスト
+  //-         .nextBtn#next.finish
+  //-           span FINISH!!!!!!!!!!!
+
+  //- result-area
+  //-   .resultContainer
+  //-     .container
+  //-       .resultQuestionnaire#resultQuestionnaire
+  //-         p.text2 ご協力ありがとうございました！！
+  //-         p.msg2 下記テキストエリアの文字列をご共有くださいませ。<br>お手数をお掛け致しますが、宜しくお願いいたします。
+  //-         textarea#resulttxt(name="resulttxt", rows="10")
+
+  //- result-area
+  //-   .resultContainer
+  //-     .container
+  //-       .result#result
+  //-         p.ttl
+  //-           span MATCHING<br>PERCENTAGE
+  //-         ul.percentList
+  //-           li
+  //-             dl.person
+  //-               dt.person_percent 70%
+  //-               dd.person_data
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-           li
+  //-             dl.person
+  //-               dt.person_percent 60%
+  //-               dd.person_data
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-           li
+  //-             dl.person
+  //-               dt.person_percent 50%
+  //-               dd.person_data
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-           li
+  //-             dl.person
+  //-               dt.person_percent 20%
+  //-               dd.person_data
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-                 .person_detail
+  //-                   .person_pic: img(src="/_assets/images/img_yuji.jpg", alt="")
+  //-                   p.person_name xxxさん
+  //-         .restartBtn#restartBtn RESTART

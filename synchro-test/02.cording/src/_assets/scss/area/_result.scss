@@ -1,0 +1,249 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+
+.result {
+  overflow-x: hidden;
+  margin-top: 5em;
+  .ttl {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 23%;
+    min-width: 8em;
+    height: 16rem;
+    font-family: $fontNo;
+    font-size: 3.8rem;
+    font-weight: bold;
+    animation: fromWidth100 .8s;
+    color: #fff;
+    background: $color01;
+    span {
+      position: absolute;
+      bottom: -0.05em;
+      left: -0.07em;
+      font-size: 3.8rem;
+      font-weight: bold;
+      line-height: 0.7;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+@keyframes fromWidth100 {
+  0% { width: 100vw; }
+  100% { width: 23%; }
+}
+.percentList {
+  li {
+    + li {
+      margin-top: 10em;
+    }
+
+    &:first-child,
+    &:last-child {
+      &::before {
+        content: "最も回答が一致した人";
+        display: block;
+        font-size: 1.6rem;
+        font-weight: normal;
+        text-align: center;
+        color: $colorText2;
+      }
+      .person {
+        &_percent {
+          font-size: 6rem;
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 5rem;
+            height: 4rem;
+            margin-right: .2em;
+            margin-bottom: .07em;
+            background: url(/_assets/images/icon_first.svg) center center / contain no-repeat;
+          }
+        }
+        // &_data {
+        //   gap: 3rem 5rem;
+        //   max-width: 100rem;
+        // }
+        // &_detail {
+        //   max-width: 35rem;
+        // }
+        // &_pic {
+        //   position: relative;
+        //   z-index: -1;
+        //   max-width: none;
+        //   margin: 3em auto 0;
+        // }
+        // &_name {
+        //   margin-top: 1em;
+        //   font-size: 2.4rem;
+        //   font-weight: bold;
+        // }
+      }
+    }
+    &:first-child {
+      .person {
+        &_data {
+          gap: 3rem 5rem;
+          max-width: 100rem;
+        }
+        &_detail {
+          max-width: 35rem;
+        }
+        &_pic {
+          position: relative;
+          z-index: -1;
+          max-width: none;
+          margin: 3em auto 0;
+        }
+        &_name {
+          margin-top: 1em;
+          font-size: 2.4rem;
+          font-weight: bold;
+        }
+      }
+    }
+    &:last-child {
+      &::before {
+        content: "最も気が合わないかもしれない人";
+      }
+      .person {
+        &_percent {
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 3rem;
+            height: 4rem;
+            margin-right: .2em;
+            margin-bottom: 0;
+            background: url(/_assets/images/icon_last.svg) center center / contain no-repeat;
+          }
+        }
+        &_pic {
+          transform: rotate(-25deg);
+        }
+        &_name {
+          font-size: 1.2rem;
+          text-shadow: -1px -1px 2px #fff, -1px 1px 2px #fff, 1px -1px 2px #fff, 1px 1px 2px #fff;
+        }
+      }
+    }
+  }
+}
+.person {
+  &_percent {
+    font-family: $fontNo;
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-align: center;
+    &::after {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 0.5rem;
+      margin: 2rem auto 0;
+      border-radius: 0.25rem;
+      background: $color01;
+    }
+  }
+  &_data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 13rem;
+    max-width: 60rem;
+    margin: 4.5em auto 0;
+    justify-content: center;
+  }
+  // &_detail {
+  // }
+  &_pic {
+    position: relative;
+    z-index: -1;
+    max-width: 100px;
+    margin: 0 auto;
+  }
+  &_name {
+    margin-top: 0.2em;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+.restartBtn {
+  display: block;
+  width: 250px;
+  margin: 8em auto 0;
+  padding: .6em 2.3em;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: .2s;
+  text-align: center;
+  letter-spacing: .2em;
+  color: $color01;
+  border: 1px solid $color01;
+  background: #fff;
+  &:hover {
+    color: #fff;
+    background: $color01;
+  }
+}
+.footerLink {
+  margin-top: 3em;
+  padding-right: 1em;
+  text-align: right;
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 0.5em;
+    padding-right: 1.5rem;
+    line-height: 1;
+    text-decoration: none;
+    color: $colorText2;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: block;
+      width: 0;
+      height: 0;
+      transform: translateY(-50%);
+      border-width: 0.4rem 0 0.4rem 0.5rem;
+      border-style: solid;
+      border-color: transparent transparent transparent $colorText2;
+    }
+  }
+}
+
+
+
+
+.resultQuestionnaire {
+  padding: 2em 0;
+}
+.thankspic {
+  max-width: 200px;
+}
+.text2 {
+  margin-top: 1em;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.msg2 {
+  margin-top: 1em;
+}
+textarea {
+  width: 100%;
+  margin-top: 3em;
+}
+
+.resultContainer {
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

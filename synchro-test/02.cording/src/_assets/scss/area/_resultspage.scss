@@ -1,0 +1,183 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+@use "../components/extend" as *;
+@use 'sass:math';
+@use 'sass:color';
+
+
+.resultsTtl {
+  padding-bottom: 3em;
+  font-size: 2rem;
+  font-size: 2.6rem;
+  font-weight: bold;
+  &::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 0.5rem;
+    margin-top: .2em;
+    border-radius: 0.25rem;
+    background: $color01;
+  }
+}
+
+.pointsContainer,
+.percentContainer {
+  padding-right: 1em;
+  padding-left: 1em;
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+// 回答票数
+.pointList {
+  display: flex;
+  padding: 0 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5em;
+}
+.points{
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 3em;
+
+  &_no {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: $fontNo;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  &_svg {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60%;
+      line-height: 1.3;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+
+  &_ans {
+    width: 9rem;
+    > ul {
+      > li {
+        position: relative;
+        display: flex;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        align-items: center;
+        &::before {
+          content: "";
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          margin-right: .5rem;
+          background: #000;
+          flex-shrink: 0;
+        }
+        + li {
+          margin-top: 0.7em;
+        }
+      }
+    }
+  }
+}
+@for $childNo from 1 through 20 {
+  $deg: 43 * ($childNo - 1);
+  .points_ans > ul > li:nth-child(#{$childNo})::before {
+    background: adjust-hue($color01, $deg);
+  }
+  .points_svg path:nth-child(#{$childNo}) {
+    color: adjust-hue($color01, $deg);
+  }
+}
+
+// みんなの結果
+.percentContainer {
+
+  overflow-x: auto;
+  margin-top: 8em;
+}
+.percentList {
+  // min-width: 70rem;
+  th {
+    width: 10em;
+    min-width: 4em;
+    padding-left: .5em;
+    line-height: 1.2;
+    text-align: left;
+    vertical-align: middle;
+    span {
+      font-weight: bold;
+    }
+    img {
+      display: none;
+    }
+  }
+  td {
+    width: 6em;
+    height: 4em;
+    font-family: $fontNo;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+  }
+  td[data-per^="10"] {
+    border: 5px solid red;
+  }
+  td[data-per^="09"],
+  td[data-per^="08"],
+  td[data-per^="07"],
+  td[data-per^="06"],
+  td[data-per^="05"]  {
+    background: #28bfa64b;
+  }
+  // td[data-per^="04"] {
+  //   background: #28bfa615;
+  // }
+  // td[data-per^="03"],
+  // td[data-per^="02"] {
+  // }
+  td[data-per^="01"],
+  td[data-per^="00"]  {
+    color: #333;
+    background: #eaeaea;
+  }
+  .head {
+    th {
+      span {
+        display: none;
+      }
+      img {
+        display: block;
+        width: 60%;
+        margin: 0 auto .5em;
+      }
+    }
+  }
+  tr {
+    border-bottom: 1px solid $color01;
+  }
+  .picSpace {
+    overflow: hidden;
+    width: 20%;
+    margin: 0 auto;
+    border: 1px solid $color01;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }
+}

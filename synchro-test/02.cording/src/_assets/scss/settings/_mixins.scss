@@ -1,0 +1,25 @@
+@use "../settings/variables" as *;
+@use "sass:math";
+
+@mixin mq($breakpoint: medium, $rule: max, $addition: false) {
+  $breakpoint: map_get($mq-breakpoints, $breakpoint);
+  @if $rule == min and $addition {
+    $breakpoint: $breakpoint + .0625;
+  }
+  @media (#{$rule}-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media($rule: max, $breakpoint: $viewTablet){
+  @if $rule == min {
+    @media screen and (min-width : math.div($breakpoint, 16)+em) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (max-width : math.div($breakpoint - 1, 16)+em) {
+      @content;
+    }
+  }
+}

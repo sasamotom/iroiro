@@ -1,0 +1,66 @@
+@use "../settings/mixins" as *;
+@use "../settings/variables" as *;
+
+// ▼ 游ゴシック体 を使用するとき ▼
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Yu Gothic';
+  src: local('Yu Gothic Bold');
+  font-weight: bold;
+}
+
+* {	font-size:100%;}
+
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  @include media() {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $baseFont;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  word-wrap: break-word;
+  color: $baseColor;
+  background-color: $bgColor;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: underline;
+  color: $linkColor;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}

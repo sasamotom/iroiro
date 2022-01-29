@@ -1,0 +1,26 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="description", content="")
+    meta(name="keywords", content="")
+    title Document
+    link(rel="stylesheet", href="/_assets/css/style.css")
+  body
+    .wrapper
+      include ./_includes/_header
+
+      .container
+        h2 スマホ＆タブレットの場合
+        .iframeWrapper
+          iframe(src="/pdfjs/web/viewer.html?file=../../_assets/pdf/sample.pdf" width="390px" height="540px")
+          //- file=でpdfへのパスを指定する（URL）
+          //- 参考サイト    http://csv.pa.land.to/?p=856
+
+        h2 PCの場合（以下はiframeのsrcにpdfを指定しただけだが、普通にスマホ＆タブレットと同じでよさそう）</p>
+        .iframeWrapper
+          iframe(src="/_assets/pdf/dummy.pdf" frameborder="0")
+    script(src="/_assets/js/vendor.js")
+    script(src="/_assets/js/app.js")

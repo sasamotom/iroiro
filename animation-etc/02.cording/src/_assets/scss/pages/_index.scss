@@ -18,17 +18,17 @@
 
 .footerBtn {
   padding: 2em;
-  letter-spacing: 0.05em;
-  text-align: right;
   font-size: 1.2rem;
+  text-align: right;
+  letter-spacing: 0.05em;
   a {
     display: inline-block;
     padding: 0.5em 1.5em;
+    transition: .3s;
     text-decoration: none;
+    color: #555;
     border: 1px solid #555;
     border-radius: 2px;
-    color: #555;
-    transition: .3s;
     &:hover {
       color: #fff;
       background: #555;

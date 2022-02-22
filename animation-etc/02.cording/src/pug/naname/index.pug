@@ -1,0 +1,28 @@
+extends ../_base/_layout
+
+block vars
+  include ../_base/_settings
+  - let key = "naname"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  .container
+    h1 斜めのアニメーション
+      .container
+        h2 ラインに沿って移動する(-10deg)
+        .box
+          .target.anime1
+
+        h2 ラインに沿って垂直に移動する(-10deg)
+        .box
+          .target.anime2
+
+        h2 ラインに沿って移動する(-10deg)
+        .box2
+          .target.anime3
+
+        h2 ラインに沿って垂直に移動する(-10deg)
+        .box2
+          .target.anime4
+

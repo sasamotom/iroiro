@@ -1,0 +1,126 @@
+@charset "utf-8";
+@use 'sass:math';
+
+// 右上上がりの斜め
+$deg: -10deg;
+.box {
+  border: 1px solid #aaa;
+  overflow: hidden;
+  height: 300px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 130%;
+    height: 100px;
+    background: #eee;
+    transform: translate(-50%, -50%) rotate($deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 130%;
+    height: 10px;
+    background: rgba(51, 51, 51, 0.3);
+    transform: translate(-50%, -50%) rotate($deg + 90deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}
+.target {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(191, 231, 79);
+  position: absolute;
+}
+
+.anime1 {
+  left: 0;
+  bottom: 0;
+  animation: leftbottomToRighttop 2s linear infinite alternate;
+}
+@keyframes leftbottomToRighttop {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50vw, 50vw * math.tan($deg));
+  }
+}
+
+.anime2 {
+  left: 50%;
+  top: 60%;
+  animation: rightbottomToLefttop 2s linear infinite alternate;
+}
+@keyframes rightbottomToLefttop {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(200px * math.tan($deg), -200px);
+  }
+}
+
+
+// 右下下がりの斜め
+$deg2: 20deg;
+.box2 {
+  border: 1px solid #aaa;
+  overflow: hidden;
+  height: 300px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 130%;
+    height: 100px;
+    background: #eee;
+    transform: translate(-50%, -50%) rotate($deg2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 130%;
+    height: 10px;
+    background: rgba(51, 51, 51, 0.3);
+    transform: translate(-50%, -50%) rotate($deg2 + 90deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}
+.anime3 {
+  left: 0;
+  top: 0;
+  animation: rightbottomToLefttop2 2s linear infinite alternate;
+}
+@keyframes rightbottomToLefttop2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50vw, 50vw * math.tan($deg2));
+  }
+}
+.anime4 {
+  left: 50%;
+  top: 0;
+  animation: leftbottomToRighttop2 2s linear infinite alternate;
+}
+@keyframes leftbottomToRighttop2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-200px * math.tan($deg2), 200px);
+  }
+}

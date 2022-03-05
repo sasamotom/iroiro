@@ -3,7 +3,26 @@
 @use "../components/extend" as *;
 @use 'sass:math';
 
-.fvContainer {
+////////////////////////////////////////////////////
+// ShadowDOM外でスタイルを指定するパターン
+// （ここに記載されているスタイルを含むfv.cssはindex.htmlの方で読み込んでおり、shadowdomではimportしていない）
+// 参考URL  https://qiita.com/suin/items/72b85e7d4465719aa4e8
+//
+// 【変更点】
+// ①jsでは、コンポーネントにて
+//    <p class="message">Are you ready?</p>
+// みたいにclassで指定したところを
+//    <p part="message">Are you ready?</p>
+// のようにpartで指定すること
+//
+// ②CSSでは
+//    .message{・・・)
+// と普通にクラスに対する装飾としていたところを
+//    ::part(message){・・・}
+// のように::part( )の記載に変える
+////////////////////////////////////////////////////
+
+::part(fvContainer) {
   position: fixed;
   z-index: -1;
   top: 0;
@@ -18,19 +37,19 @@
   align-items: center;
 }
 
-.theme {
+::part(theme) {
   padding: 0 1em;
   font-size: 1.6rem;
   letter-spacing: 0;
   color: $color01;
 }
-.message {
+::part(message) {
   margin-top: 1.7em;
   padding: 0 1em;
   font-size: 3.6rem;
   letter-spacing: .2em;
 }
-.okBtn {
+::part(okBtn) {
   display: inline-block;
   margin-top: 4.5em;
   padding: .5em 2.3em;

@@ -54,7 +54,6 @@ export class FirstView {
 const css: string =
 `
 @import "/_assets/css/common.css";
-@import "/_assets/css/fv.css";
 .fvContainer {
   animation: fadeIn .5s;
   transition: .5s;
@@ -74,10 +73,10 @@ const css: string =
 // カスタム要素HTML
 const html: string =
 `
-<div class="fvContainer" id="fvContainer">
-  <p class="theme" id="${Const.PARAM_THEME}"></p>
-  <p class="message">Are you ready?</p>
-  <div class="okBtn" id="${Const.HTML_ID_BUTTON}">OK</div>
+<div part="fvContainer" id="fvContainer">
+  <p part="theme" id="${Const.PARAM_THEME}"></p>
+  <p part="message">Are you ready?</p>
+  <div part="okBtn" id="${Const.HTML_ID_BUTTON}">OK</div>
 </div>
 `
 

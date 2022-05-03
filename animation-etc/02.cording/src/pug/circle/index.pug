@@ -1,0 +1,15 @@
+extends ../_base/_layout
+
+block vars
+  include ../_base/_settings
+  - let key = "circle"
+  - let page = pages[key]
+  - let imgpath = '/_assets/images/'
+
+block contents
+  .container
+    h1 円形配置
+      p ぐるっといっしゅう
+      ul.list01
+        - for (var x = 1; x <= 36; x++)
+          li #{x}

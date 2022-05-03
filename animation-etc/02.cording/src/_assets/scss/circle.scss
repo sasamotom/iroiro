@@ -1,0 +1,108 @@
+@charset "utf-8";
+@use 'sass:math';
+@use 'sass:color';
+
+// 角度を取得する
+@function getCircleDeg($itemCnt, $itemNo, $startDeg: 0deg, $direction: "normal", $turn: false) {
+  $itemDeg: 0deg;
+  @if ($turn == false) {
+    $itemDeg: (360deg * ($itemNo - 1) / $itemCnt);
+  }
+  @else {
+    @if (($itemNo - 1) % 2 != 0) {
+      $itemDeg: (360deg * math.ceil(($itemNo - 1) / 2) / $itemCnt);
+    }
+    @else {
+      $itemDeg: -(360deg * (($itemNo - 1) / 2) / $itemCnt);
+    }
+  }
+  $deg: 0deg;
+  @if ($direction == "normal") {
+    $deg: $startDeg + $itemDeg;
+  }
+  @else {
+    $deg: $startDeg - $itemDeg;
+  }
+  @return $deg;
+}
+// ------------------------------------------------------------------------------------
+// 機能： 円の中心からのX座標を求める
+// 引数： $itemCnt      円配置するアイテムの全個数
+//      $itemNo       アイテム番号（1〜）
+//      $r            円の半径
+//      $startDeg     開始位置（0だと右、90degだと上、180degだと左、270degだと下） 規定値 0deg
+//      $direction:   どちら周りに配置するか（"normal"のとき反時計回り、"reverse"のとき時計回り） 規定値 "normal"
+//      $turn         アイテムを開始位置から左右交互に配置するか（falseのとき交互に配置しない、trueのとき交互に配置する） 規定値 false
+// 戻値：円の中心からのX座標
+// ------------------------------------------------------------------------------------
+@function circleX($itemCnt, $itemNo, $r, $startDeg: 0deg, $direction: "normal", $turn: false) {
+  $deg: getCircleDeg($itemCnt, $itemNo, $startDeg, $direction, $turn);
+  @return $r * math.cos($deg);
+}
+// ------------------------------------------------------------------------------------
+// 機能： 円の中心からのY座標を求める
+// 引数： $itemCnt      円配置するアイテムの全個数
+//      $itemNo       アイテム番号（1〜）
+//      $r            円の半径
+//      $startDeg     開始位置（0だと右、90degだと上、180degだと左、270degだと下） 規定値 0deg
+//      $direction:   どちら周りに配置するか（"normal"のとき反時計回り、"reverse"のとき時計回り） 規定値 "normal"
+//      $turn         アイテムを開始位置から左右交互に配置するか（falseのとき交互に配置しない、trueのとき交互に配置する） 規定値 false
+// 戻値：円の中心からのY座標
+// ------------------------------------------------------------------------------------
+@function circleY($itemCnt, $itemNo, $r, $startDeg: 0deg, $direction: "normal", $turn: false) {
+  $deg: getCircleDeg($itemCnt, $itemNo, $startDeg, $direction, $turn);
+  @return -$r * math.sin($deg);
+}
+
+
+p {
+  margin-top: 50px;
+}
+.list01 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #333;
+  > li {
+    position: absolute;
+    top: 130px;
+    left: 130px;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 10px;
+    border-radius: 50%;
+    background: #eee;
+    justify-content: center;
+    align-items: center;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+    border-radius: 50%;
+  }
+}
+
+@for $no from 1 through 7 {
+  .list01 > li:nth-child(#{$no}) {
+    // transform: translate(circleX(6, $value, 100px, 90deg, "normal", true),
+    //                      circleY(6, $value, 100px, 90deg, "normal", true));
+    transform: translate(circleX(7, $no, 100px, 90deg, "normal", false),
+    circleY(7, $no, 100px, 90deg, "normal", false));
+  }
+}
+
+@for $value2 from 1 through 36 {
+  $deg: ($value2 - 1) * 10;
+  .list01 > li:nth-child(#{$value2}) {
+    background: adjust-hue(#e7e683, $deg);
+  }
+}
